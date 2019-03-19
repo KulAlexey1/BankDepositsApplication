@@ -1,0 +1,4 @@
+﻿alter table dbo.phone_number_operators_codes
+add constraint fk_phone_number_operators_codes_phone_number_operator
+    foreign key (phone_number_operator_id) references dbo.phone_number_operators(phone_number_operator_id)
+go

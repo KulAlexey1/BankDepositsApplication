@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVC", "MVC\MVC.csproj", "{49E65103-3495-423B-A350-622B8F9DFAAA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{2C83EBBE-72BC-4D91-AC21-5B2054DB965B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BAL", "BAL", "{DFE62748-DE24-4255-931E-1AACA61C4271}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{5B87F48C-3E9C-4915-89BE-977C64FAC13B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{0CE793D9-A8DA-4C4A-9CC3-E3F9A6D0977F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{69A14B14-E35B-4520-8532-5946716D2C10}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BankDepositsDB", "BankDepositsDB\BankDepositsDB.sqlproj", "{2448BC22-A90C-4AE2-8937-EE103C729D30}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49E65103-3495-423B-A350-622B8F9DFAAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49E65103-3495-423B-A350-622B8F9DFAAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49E65103-3495-423B-A350-622B8F9DFAAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49E65103-3495-423B-A350-622B8F9DFAAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2448BC22-A90C-4AE2-8937-EE103C729D30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2448BC22-A90C-4AE2-8937-EE103C729D30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2448BC22-A90C-4AE2-8937-EE103C729D30}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2448BC22-A90C-4AE2-8937-EE103C729D30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2448BC22-A90C-4AE2-8937-EE103C729D30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2448BC22-A90C-4AE2-8937-EE103C729D30}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{49E65103-3495-423B-A350-622B8F9DFAAA} = {0CE793D9-A8DA-4C4A-9CC3-E3F9A6D0977F}
+		{2448BC22-A90C-4AE2-8937-EE103C729D30} = {69A14B14-E35B-4520-8532-5946716D2C10}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D6483BF1-EBFD-4B91-B69E-FE3B09C3F11C}
+	EndGlobalSection
+EndGlobal
