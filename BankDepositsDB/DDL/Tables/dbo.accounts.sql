@@ -4,7 +4,7 @@
     currency_id int not null,
     opening_date date not null,
     closing_date date null,
-    amount decimal(30, 2) not null,
+    amount decimal(30, 4) not null,
     constraint pk_accounts primary key (account_id)
 )
 go

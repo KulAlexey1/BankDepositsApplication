@@ -64,6 +64,7 @@
     <Folder Include="DML" />
     <Folder Include="DML\Inserts" />
     <Folder Include="DML\Stored Procedures" />
+    <Folder Include="DML\Functions" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="DDL\Tables\dbo.phone_numbers.sql" />
@@ -107,10 +108,21 @@
     <Build Include="DDL\Constraints\dbo.constraints_issuing_authorities.sql" />
     <Build Include="DDL\Constraints\dbo.constraints_issuing_authorities_localities.sql" />
     <Build Include="DML\Stored Procedures\dbo.usp_largest_deposit_for_year.sql" />
-    <Build Include="DML\Stored Procedures\dbo.usp_sum_of_all_deposits_for_month.sql" />
-    <Build Include="DML\Stored Procedures\dbo.usp_most_popular_deposit_currency.sql" />
+    <Build Include="DML\Stored Procedures\dbo.usp_sum_of_deposits_for_month.sql" />
+    <Build Include="DML\Stored Procedures\dbo.usp_most_popular_deposit_currency_for_year.sql" />
     <Build Include="DML\Stored Procedures\dbo.usp_depositors_with_non_belarus_citizenship.sql" />
     <Build Include="DML\Stored Procedures\dbo.usp_deposits_with_depositors_age_in_range.sql" />
+    <Build Include="DDL\Tables\dbo.currency_conversion.sql" />
+    <Build Include="DML\Functions\dbo.ufn_convert_currency_amount_to_native_amount.sql" />
+    <Build Include="DML\Functions\dbo.ufn_get_age.sql" />
+    <Build Include="DML\Stored Procedures\dbo.usp_smallest_deposit_for_year.sql" />
+    <Build Include="DML\Stored Procedures\dbo.usp_average_sum_of_deposits_for_month.sql" />
+    <Build Include="DML\Stored Procedures\dbo.usp_employees_without_deposit_contract_for_month.sql" />
+    <Build Include="DDL\Tables\dbo.deposit_terms.sql" />
+    <Build Include="DDL\Constraints\dbo.constraints_deposit_terms.sql" />
+    <Build Include="DML\Stored Procedures\dbo.usp_employees_with_deposit_contract_for_month.sql" />
+    <Build Include="DML\Stored Procedures\dbo.usp_depositors_with_account_replenishment_deposits_for_year.sql" />
+    <Build Include="DML\Stored Procedures\dbo.usp_depositors_with_fixed_deposits_for_year.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeployment.sql" />

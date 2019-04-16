@@ -4,7 +4,7 @@
     account_id int not null,
     [type_id] int not null,
     date_time datetime not null,
-    amount decimal(30, 2) not null,
+    amount decimal(30, 4) not null,
     constraint pk_account_operations primary key (account_operation_id)
 )
 go

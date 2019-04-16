@@ -5,5 +5,5 @@ go
 
 alter table dbo.deposits
 add constraint ak_deposit_payment_period_currency_id_term_rate
-    unique (deposit, payment_period, currency_id, term, rate)
+    unique (deposit, payment_period, currency_id, deposit_term_id, rate, account_replenishment)
 go
