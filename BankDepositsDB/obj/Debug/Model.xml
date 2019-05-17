@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<DataSchemaModel FileFormatVersion="1.2" SchemaVersion="2.9" DspName="Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider" CollationLcid="1033" CollationCaseSensitive="False" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+<DataSchemaModel FileFormatVersion="1.2" SchemaVersion="2.9" DspName="Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider" CollationLcid="1033" CollationCaseSensitive="False" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
 	<Header>
 		<CustomData Category="AnsiNulls">
 			<Metadata Name="AnsiNulls" Value="True" />
@@ -8,11 +8,11 @@
 			<Metadata Name="QuotedIdentifier" Value="True" />
 		</CustomData>
 		<CustomData Category="CompatibilityMode">
-			<Metadata Name="CompatibilityMode" Value="140" />
+			<Metadata Name="CompatibilityMode" Value="130" />
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="BankDepositsDB.dll" />
-			<Metadata Name="FileName" Value="F:\УЧЁБА\БД\КУРСОВОЕ ПРОЕКТИРОВАНИЕ\BANKDEPOSITSAPPLICATION\BANKDEPOSITSDB\OBJ\DEBUG\BANKDEPOSITSDB.DLL" />
+			<Metadata Name="FileName" Value="C:\USERS\MI-PR\BANKDEPOSITSAPPLICATION\BANKDEPOSITSDB\OBJ\DEBUG\BANKDEPOSITSDB.DLL" />
 			<Metadata Name="AssemblyName" Value="BankDepositsDB" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BankDepositsDB\obj\Debug\BankDepositsDB.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\mi-pr\BankDepositsApplication\BankDepositsDB\obj\Debug\BankDepositsDB.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>
@@ -44,13 +44,76 @@
 				</Entry>
 			</Relationship>
 		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[0]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[deposits]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[deposits].[payment_period]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[0]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[deposit_terms]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[deposit_terms].[days_amount]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[0]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[deposit_terms]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[deposit_terms].[months_amount]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[0]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[deposit_terms]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[deposit_terms].[years_amount]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
+		</Element>
 		<Element Type="SqlTable" Name="[dbo].[account_operation_types]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
 					<Element Type="SqlSimpleColumn" Name="[dbo].[account_operation_types].[account_operation_type_id]">
 						<Property Name="IsNullable" Value="False" />
-						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -87,7 +150,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[account_operations]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -163,7 +226,7 @@
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
-									<Property Name="Scale" Value="2" />
+									<Property Name="Scale" Value="4" />
 									<Property Name="Precision" Value="30" />
 									<Relationship Name="Type">
 										<Entry>
@@ -181,7 +244,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[accounts]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -256,7 +319,7 @@
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
-									<Property Name="Scale" Value="2" />
+									<Property Name="Scale" Value="4" />
 									<Property Name="Precision" Value="30" />
 									<Relationship Name="Type">
 										<Entry>
@@ -274,7 +337,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[addresses]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -366,7 +429,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
 		</Element>
 		<Element Type="SqlUniqueConstraint" Name="[dbo].[ak_account_operation_type]">
 			<Relationship Name="ColumnSpecifications">
@@ -473,7 +536,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[deposits].[term]" />
+								<References Name="[dbo].[deposits].[deposit_term_id]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -487,10 +550,55 @@
 						</Relationship>
 					</Element>
 				</Entry>
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[deposits].[account_replenishment]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
 					<References Name="[dbo].[deposits]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlUniqueConstraint" Name="[dbo].[ak_deposit_term_days_months_years]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[deposit_terms].[days_amount]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[deposit_terms].[months_amount]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[deposit_terms].[years_amount]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[deposit_terms]" />
 				</Entry>
 			</Relationship>
 		</Element>
@@ -899,6 +1007,28 @@
 				</Entry>
 			</Relationship>
 		</Element>
+		<Element Type="SqlCheckConstraint" Name="[dbo].[check_deposit_term_days_months_years]">
+			<Property Name="CheckExpressionScript">
+				<Value><![CDATA[(days_amount + months_amount + years_amount != 0) 
+        and (days_amount + months_amount + years_amount) in (days_amount, months_amount, years_amount)]]></Value>
+			</Property>
+			<Relationship Name="CheckExpressionDependencies">
+				<Entry>
+					<References Name="[dbo].[deposit_terms].[days_amount]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposit_terms].[months_amount]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposit_terms].[years_amount]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[deposit_terms]" />
+				</Entry>
+			</Relationship>
+		</Element>
 		<Element Type="SqlCheckConstraint" Name="[dbo].[check_employees_start_date_end_date]">
 			<Property Name="CheckExpressionScript">
 				<Value><![CDATA[[end_date] > [start_date]]]></Value>
@@ -978,7 +1108,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[contracts]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1101,7 +1231,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[currencies]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1145,7 +1275,146 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[currency_conversion]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[currency_conversion].[currency_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[currency_conversion].[buy]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[currency_conversion].[amount_in_native_currency_per_unit]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="5" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[deposit_terms]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[deposit_terms].[deposit_term_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[deposit_terms].[days_amount]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="4" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[deposit_terms].[months_amount]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="5" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[deposit_terms].[years_amount]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="6" />
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[depositors]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1237,7 +1506,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[deposits]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1282,16 +1551,15 @@
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
-									<Property Name="Scale" Value="2" />
-									<Property Name="Precision" Value="5" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[decimal]" />
+											<References ExternalSource="BuiltIns" Name="[int]" />
 										</Entry>
 									</Relationship>
 								</Element>
 							</Entry>
 						</Relationship>
+						<AttachedAnnotation Disambiguator="3" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1311,16 +1579,14 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[deposits].[term]">
+					<Element Type="SqlSimpleColumn" Name="[dbo].[deposits].[deposit_term_id]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
-									<Property Name="Scale" Value="2" />
-									<Property Name="Precision" Value="5" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[decimal]" />
+											<References ExternalSource="BuiltIns" Name="[int]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -1334,11 +1600,27 @@
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
-									<Property Name="Scale" Value="7" />
-									<Property Name="Precision" Value="10" />
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="4" />
 									<Relationship Name="Type">
 										<Entry>
 											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[deposits].[account_replenishment]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -1352,7 +1634,22 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
+		</Element>
+		<Element Type="SqlDefaultConstraint" Name="[dbo].[df_logs_log_datetime]">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[getutcdate()]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[logs]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[logs].[log_datetime]" />
+				</Entry>
+			</Relationship>
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[employee_positions]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1396,7 +1693,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[employees]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1552,7 +1849,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[fk_account_operations_account]">
 			<Relationship Name="Columns">
@@ -1972,6 +2269,28 @@
 				</Entry>
 			</Relationship>
 		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[fk_logs_log_types]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[logs].[log_type_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[logs]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[log_types].[log_type_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[log_types]" />
+				</Entry>
+			</Relationship>
+		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[fk_passports_citizenships]">
 			<Relationship Name="Columns">
 				<Entry>
@@ -2130,7 +2449,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[issuing_authorities_localities]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -2173,7 +2492,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[localities]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -2266,7 +2585,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[locality_types]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -2310,7 +2629,128 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="23" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[log_types]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[log_types].[log_type_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[log_types].[log_type]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="24" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[logs]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[logs].[log_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[logs].[log_type_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[logs].[log_text]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[logs].[log_datetime]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="25" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[passports]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -2535,7 +2975,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="26" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[phone_number_operators]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -2579,7 +3019,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="27" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[phone_number_operators_codes]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -2622,7 +3062,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="28" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[phone_numbers]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -2698,7 +3138,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="29" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_account_operation_types]">
 			<Relationship Name="ColumnSpecifications">
@@ -2717,7 +3157,7 @@
 					<References Name="[dbo].[account_operation_types]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="3" />
+			<AttachedAnnotation Disambiguator="7" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_account_operations]">
 			<Relationship Name="ColumnSpecifications">
@@ -2736,7 +3176,7 @@
 					<References Name="[dbo].[account_operations]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="4" />
+			<AttachedAnnotation Disambiguator="8" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_accounts]">
 			<Relationship Name="ColumnSpecifications">
@@ -2755,7 +3195,7 @@
 					<References Name="[dbo].[accounts]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="5" />
+			<AttachedAnnotation Disambiguator="9" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_addresses]">
 			<Relationship Name="ColumnSpecifications">
@@ -2774,7 +3214,7 @@
 					<References Name="[dbo].[addresses]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="6" />
+			<AttachedAnnotation Disambiguator="10" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_citizenships]">
 			<Relationship Name="ColumnSpecifications">
@@ -2793,7 +3233,7 @@
 					<References Name="[dbo].[citizenships]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="7" />
+			<AttachedAnnotation Disambiguator="11" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_contracts]">
 			<Relationship Name="ColumnSpecifications">
@@ -2812,7 +3252,7 @@
 					<References Name="[dbo].[contracts]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="8" />
+			<AttachedAnnotation Disambiguator="12" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_currencies]">
 			<Relationship Name="ColumnSpecifications">
@@ -2831,7 +3271,63 @@
 					<References Name="[dbo].[currencies]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="9" />
+			<AttachedAnnotation Disambiguator="13" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_currency_conversion]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[currency_conversion].[currency_id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[currency_conversion].[buy]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[currency_conversion].[amount_in_native_currency_per_unit]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[currency_conversion]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="14" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_deposit_terms]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[deposit_terms].[deposit_term_id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[deposit_terms]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="15" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_depositors]">
 			<Relationship Name="ColumnSpecifications">
@@ -2850,7 +3346,7 @@
 					<References Name="[dbo].[depositors]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="10" />
+			<AttachedAnnotation Disambiguator="16" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_deposits]">
 			<Relationship Name="ColumnSpecifications">
@@ -2869,7 +3365,7 @@
 					<References Name="[dbo].[deposits]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="11" />
+			<AttachedAnnotation Disambiguator="17" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_employee_positions]">
 			<Relationship Name="ColumnSpecifications">
@@ -2888,7 +3384,7 @@
 					<References Name="[dbo].[employee_positions]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="12" />
+			<AttachedAnnotation Disambiguator="18" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_employees]">
 			<Relationship Name="ColumnSpecifications">
@@ -2907,7 +3403,7 @@
 					<References Name="[dbo].[employees]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="13" />
+			<AttachedAnnotation Disambiguator="19" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_issuing_authorities]">
 			<Relationship Name="ColumnSpecifications">
@@ -2926,7 +3422,7 @@
 					<References Name="[dbo].[issuing_authorities]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="14" />
+			<AttachedAnnotation Disambiguator="20" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_issuing_authorities_localities]">
 			<Relationship Name="ColumnSpecifications">
@@ -2954,7 +3450,7 @@
 					<References Name="[dbo].[issuing_authorities_localities]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="15" />
+			<AttachedAnnotation Disambiguator="21" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_localities]">
 			<Relationship Name="ColumnSpecifications">
@@ -2973,7 +3469,7 @@
 					<References Name="[dbo].[localities]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="16" />
+			<AttachedAnnotation Disambiguator="22" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_locality_types]">
 			<Relationship Name="ColumnSpecifications">
@@ -2992,7 +3488,45 @@
 					<References Name="[dbo].[locality_types]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="17" />
+			<AttachedAnnotation Disambiguator="23" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_log_types]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[log_types].[log_type_id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[log_types]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="24" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_logs]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[logs].[log_id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[logs]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="25" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_passports]">
 			<Relationship Name="ColumnSpecifications">
@@ -3011,7 +3545,7 @@
 					<References Name="[dbo].[passports]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="18" />
+			<AttachedAnnotation Disambiguator="26" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_phone_number_operators]">
 			<Relationship Name="ColumnSpecifications">
@@ -3030,7 +3564,7 @@
 					<References Name="[dbo].[phone_number_operators]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="19" />
+			<AttachedAnnotation Disambiguator="27" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_phone_number_operators_codes]">
 			<Relationship Name="ColumnSpecifications">
@@ -3058,7 +3592,7 @@
 					<References Name="[dbo].[phone_number_operators_codes]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="20" />
+			<AttachedAnnotation Disambiguator="28" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_phone_numbers]">
 			<Relationship Name="ColumnSpecifications">
@@ -3077,7 +3611,7 @@
 					<References Name="[dbo].[phone_numbers]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="21" />
+			<AttachedAnnotation Disambiguator="29" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[pk_streets]">
 			<Relationship Name="ColumnSpecifications">
@@ -3096,7 +3630,7 @@
 					<References Name="[dbo].[streets]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="30" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[streets]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -3172,7 +3706,1403 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="22" />
+			<AttachedAnnotation Disambiguator="30" />
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[ufn_convert_to_currency]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[decimal]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[currency_conversion]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[currency_conversion].[amount_in_native_currency_per_unit]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_convert_to_currency].[@convertible_amount]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[currency_conversion].[buy]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[currency_conversion].[currency_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_convert_to_currency].[@convertible_currency_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_convert_to_currency].[@currency_id_to_convert]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+begin
+    declare @result decimal(30, 4)
+
+    select @result = cc.amount_in_native_currency_per_unit * @convertible_amount
+    from dbo.currency_conversion cc
+    where cc.buy = 1 and cc.currency_id = @convertible_currency_id;
+
+    if @currency_id_to_convert = 1
+        return @result;
+    else if @convertible_currency_id = 1
+        set @result = @convertible_amount;
+
+    select @result = @result / cc.amount_in_native_currency_per_unit
+    from dbo.currency_conversion cc
+    where cc.buy = 0 and cc.currency_id = @currency_id_to_convert;
+
+    return @result;
+end]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="777" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="create function [dbo].[ufn_convert_to_currency]&#xD;&#xA;(&#xD;&#xA;    @convertible_currency_id int,&#xD;&#xA;    @convertible_amount decimal(30, 4),&#xD;&#xA;    @currency_id_to_convert int&#xD;&#xA;)&#xD;&#xA;returns decimal(30, 4)&#xD;&#xA;as" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_convert_to_currency].[@convertible_currency_id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_convert_to_currency].[@convertible_amount]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="4" />
+									<Property Name="Precision" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_convert_to_currency].[@currency_id_to_convert]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Property Name="Scale" Value="4" />
+						<Property Name="Precision" Value="30" />
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[decimal]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[ufn_get_age]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[date]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_get_age].[@birth_date]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+begin
+    declare @current_date date = getdate();
+
+    declare @birth_year int = year(@birth_date);
+    declare @current_year int = year(@current_date); 
+
+    declare @age int = @current_year - @birth_year;
+
+    declare @birth_month int = month(@birth_date);
+    declare @current_month int = month(@current_date);
+    declare @month_diff int = @current_month - @birth_month; 
+    
+    if @month_diff < 0
+        return @age - 1;
+    else if @month_diff > 0
+        return @age;
+    else if @month_diff = 0 and day(@current_date) - day(@birth_date) < 0    
+        return @age - 1;
+    return @age;
+end]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="692" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="create function [dbo].[ufn_get_age](@birth_date date)&#xD;&#xA;returns int&#xD;&#xA;as" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_get_age].[@birth_date]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[int]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_average_sum_of_deposits_for_month]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+begin    
+    select @result = avg(dbo.ufn_convert_to_currency(a.currency_id, ao.amount, 1))
+    from dbo.contracts cts
+        join dbo.accounts a
+            on cts.account_id = a.account_id
+        join dbo.account_operations ao
+            on a.account_id = ao.account_id
+    where year(cts.conclusion_date) = @year and month(cts.conclusion_date) = @month
+        and year(ao.date_time) = @year and month(ao.date_time) = @month and ao.[type_id] = 1;
+end]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[contracts]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[accounts]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[account_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[accounts].[account_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[account_operations]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[accounts].[account_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[account_operations].[account_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_average_sum_of_deposits_for_month].[@result]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_convert_to_currency]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[accounts].[currency_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[account_operations].[amount]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[conclusion_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_average_sum_of_deposits_for_month].[@year]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_average_sum_of_deposits_for_month].[@month]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[account_operations].[date_time]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[account_operations].[type_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_average_sum_of_deposits_for_month].[@year]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_average_sum_of_deposits_for_month].[@month]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_average_sum_of_deposits_for_month].[@result]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="602" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="create procedure [dbo].[usp_average_sum_of_deposits_for_month]&#xD;&#xA;    @year int,&#xD;&#xA;    @month int,&#xD;&#xA;    @result decimal(30, 2) output&#xD;&#xA;as" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_depositors_with_account_replenishment_deposits_for_year]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+begin
+    select dtr.depositor_id, p.last_name, p.first_name, p.middle_name
+    from dbo.depositors dtr join dbo.passports p on dtr.passport_id = p.passport_id
+    where exists (select 1
+           from dbo.contracts c join dbo.deposits d on c.deposit_id = d.deposit_id
+           where c.depositor_id = dtr.depositor_id
+               and year(c.conclusion_date) = @year and d.account_replenishment = 1)    
+    order by p.last_name, p.first_name, p.middle_name;
+end]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[depositors]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[depositors].[passport_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[passport_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[depositors].[depositor_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[last_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[first_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[middle_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[deposit_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits].[deposit_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[depositor_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[depositors].[depositor_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[conclusion_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_depositors_with_account_replenishment_deposits_for_year].[@year]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits].[account_replenishment]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_depositors_with_account_replenishment_deposits_for_year].[@year]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="580" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="create procedure [dbo].[usp_depositors_with_account_replenishment_deposits_for_year]&#xD;&#xA;    @year int&#xD;&#xA;as" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_depositors_with_fixed_deposits_for_year]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+begin
+    select dtr.depositor_id, p.last_name, p.first_name, p.middle_name
+    from dbo.depositors dtr join dbo.passports p on dtr.passport_id = p.passport_id
+    where dtr.depositor_id in (select c.depositor_id
+           from dbo.contracts c join dbo.deposits d on c.deposit_id = d.deposit_id
+               and year(c.conclusion_date) = @year and d.payment_period = 0
+           group by c.depositor_id)    
+    order by p.last_name, p.first_name, p.middle_name;
+end]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[depositors]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[depositors].[passport_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[passport_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[depositors].[depositor_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[last_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[first_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[middle_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[deposit_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits].[deposit_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[conclusion_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_depositors_with_fixed_deposits_for_year].[@year]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits].[payment_period]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[depositor_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_depositors_with_fixed_deposits_for_year].[@year]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="567" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="create procedure [dbo].[usp_depositors_with_fixed_deposits_for_year]&#xD;&#xA;    @year int&#xD;&#xA;as" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_depositors_with_non_belarus_citizenship]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+begin
+    select dtr.depositor_id, p.last_name, p.first_name, p.middle_name, p.citizenship_id
+    from dbo.depositors dtr join dbo.passports p on dtr.passport_id = p.passport_id
+    where p.citizenship_id != 1
+    order by p.last_name, p.first_name, p.middle_name;
+end]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[depositors]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[depositors].[passport_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[passport_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[depositors].[depositor_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[last_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[first_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[middle_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[citizenship_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="351" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="create procedure [dbo].[usp_depositors_with_non_belarus_citizenship]    &#xD;&#xA;as" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_deposits_with_depositors_age_in_range]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+begin
+    select dtr.depositor_id, p.last_name, p.first_name, p.middle_name, p.birth_date,
+        dt.deposit_id, dt.deposit, dt.currency_id, dt.deposit_term_id, dt.rate,
+        dt.payment_period, dt.account_replenishment, c.conclusion_date, c.termination_date, a.amount
+    from dbo.deposits dt
+        join dbo.contracts c on dt.deposit_id = c.deposit_id
+        join dbo.accounts a on c.account_id = a.account_id        
+        join dbo.depositors dtr on c.depositor_id = dtr.depositor_id
+        join dbo.passports p on dtr.passport_id = p.passport_id
+    where ufn_get_age(p.birth_date) >= @min_age and ufn_get_age(p.birth_date) <= @max_age
+    order by p.last_name, p.first_name, p.middle_name;
+end]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[deposits]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits].[deposit_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[deposit_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[accounts]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[account_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[accounts].[account_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[depositors]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[depositor_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[depositors].[depositor_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[depositors].[passport_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[passport_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[depositors].[depositor_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[last_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[first_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[middle_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[birth_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits].[deposit_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits].[deposit]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits].[currency_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits].[deposit_term_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits].[rate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits].[payment_period]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits].[account_replenishment]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[conclusion_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[termination_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[accounts].[amount]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_deposits_with_depositors_age_in_range].[@min_age]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_deposits_with_depositors_age_in_range].[@max_age]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_deposits_with_depositors_age_in_range].[@min_age]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_deposits_with_depositors_age_in_range].[@max_age]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="826" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="create procedure [dbo].[usp_deposits_with_depositors_age_in_range]&#xD;&#xA;    @min_age int,&#xD;&#xA;    @max_age int&#xD;&#xA;as" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_employees_with_deposit_contract_for_month]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+begin
+    select e.employee_id, p.last_name, p.first_name, p.middle_name,
+    d.deposit_id, d.deposit, c.conclusion_date
+    from dbo.contracts c
+        right join dbo.employees e on c.employee_id = e.employee_id
+        join dbo.passports p on e.passport_id = e.passport_id
+        join dbo.deposits d on c.deposit_id = d.deposit_id
+    where year(c.conclusion_date) = @year and month(c.conclusion_date) = @month
+        and c.employee_id is not null
+    order by p.last_name, p.first_name, p.middle_name, c.conclusion_date desc;
+end]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[contracts]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[employees]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[employee_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[employees].[employee_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[employees].[passport_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[deposit_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits].[deposit_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[employees].[employee_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[last_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[first_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[middle_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits].[deposit]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[conclusion_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_employees_with_deposit_contract_for_month].[@year]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_employees_with_deposit_contract_for_month].[@month]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[employee_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_employees_with_deposit_contract_for_month].[@year]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_employees_with_deposit_contract_for_month].[@month]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="653" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="create procedure [dbo].[usp_employees_with_deposit_contract_for_month]&#xD;&#xA;    @year int,&#xD;&#xA;    @month int&#xD;&#xA;as" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_employees_without_deposit_contract_for_month]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+begin
+    select e.employee_id, p.last_name, p.first_name, p.middle_name
+    from dbo.employees e
+        left join dbo.contracts c on e.employee_id = c.employee_id
+        join dbo.passports p on e.passport_id = e.passport_id
+    where year(c.conclusion_date) = @year and month(c.conclusion_date) = @month
+        and c.employee_id is null
+    order by p.last_name, p.first_name, p.middle_name;
+end]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[employees]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[employees].[employee_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[employee_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[employees].[passport_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[employees].[employee_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[last_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[first_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[passports].[middle_name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[conclusion_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_employees_without_deposit_contract_for_month].[@year]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_employees_without_deposit_contract_for_month].[@month]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[employee_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_employees_without_deposit_contract_for_month].[@year]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_employees_without_deposit_contract_for_month].[@month]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="518" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="create procedure [dbo].[usp_employees_without_deposit_contract_for_month]&#xD;&#xA;    @year int,&#xD;&#xA;    @month int&#xD;&#xA;as" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_largest_deposit_for_year]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+begin
+    select @result = max(dbo.ufn_convert_to_currency(a.currency_id, ao.amount, 1))
+    from dbo.contracts cts
+        join dbo.accounts a
+            on cts.account_id = a.account_id
+        join dbo.account_operations ao
+            on a.account_id = ao.account_id
+    where year(cts.conclusion_date) = @year and year(ao.date_time) = @year and ao.[type_id] = 1;
+end]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[contracts]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[accounts]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[account_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[accounts].[account_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[account_operations]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[accounts].[account_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[account_operations].[account_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_largest_deposit_for_year].[@result]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_convert_to_currency]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[accounts].[currency_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[account_operations].[amount]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[conclusion_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_largest_deposit_for_year].[@year]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[account_operations].[date_time]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[account_operations].[type_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_largest_deposit_for_year].[@year]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_largest_deposit_for_year].[@result]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="490" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="create procedure [dbo].[usp_largest_deposit_for_year]&#xD;&#xA;    @year int,&#xD;&#xA;    @result decimal(30, 2) output&#xD;&#xA;as" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_most_popular_deposit_currency_for_year]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+begin
+    select @result = r.currency_id
+    from (select top 1 d.currency_id, count(d.currency_id) as deposit_currency_count
+          from dbo.contracts cts
+              join dbo.deposits d on cts.deposit_id = d.deposit_id
+          where year(cts.conclusion_date) = @year
+          group by d.currency_id
+          order by deposit_currency_count DESC) r;
+end]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[contracts]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[deposit_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits].[deposit_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits].[currency_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[conclusion_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_most_popular_deposit_currency_for_year].[@year]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_most_popular_deposit_currency_for_year].[@result]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[deposits].[currency_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_most_popular_deposit_currency_for_year].[@year]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_most_popular_deposit_currency_for_year].[@result]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="486" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="create procedure [dbo].[usp_most_popular_deposit_currency_for_year]  &#xD;&#xA;    @year int,&#xD;&#xA;    @result int output&#xD;&#xA;as" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_smallest_deposit_for_year]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+begin
+    select @result = min(dbo.ufn_convert_to_currency(a.currency_id, ao.amount, 1))
+    from dbo.contracts cts
+        join dbo.accounts a
+            on cts.account_id = a.account_id
+        join dbo.account_operations ao
+            on a.account_id = ao.account_id
+    where year(cts.conclusion_date) = @year and year(ao.date_time) = @year and ao.[type_id] = 1;
+end]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[contracts]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[accounts]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[account_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[accounts].[account_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[account_operations]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[accounts].[account_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[account_operations].[account_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_smallest_deposit_for_year].[@result]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_convert_to_currency]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[accounts].[currency_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[account_operations].[amount]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[conclusion_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_smallest_deposit_for_year].[@year]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[account_operations].[date_time]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[account_operations].[type_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_smallest_deposit_for_year].[@year]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_smallest_deposit_for_year].[@result]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="491" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="create procedure [dbo].[usp_smallest_deposit_for_year]&#xD;&#xA;    @year int,&#xD;&#xA;    @result decimal(30, 2) output&#xD;&#xA;as" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_sum_of_deposits_for_month]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+begin    
+    select @result = sum(dbo.ufn_convert_to_currency(a.currency_id, ao.amount, 1))
+    from dbo.contracts cts
+        join dbo.accounts a
+            on cts.account_id = a.account_id
+        join dbo.account_operations ao
+            on a.account_id = ao.account_id
+    where year(cts.conclusion_date) = @year and month(cts.conclusion_date) = @month
+        and year(ao.date_time) = @year and month(ao.date_time) = @month and ao.[type_id] = 1;
+end]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[contracts]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[accounts]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[account_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[accounts].[account_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[account_operations]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[accounts].[account_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[account_operations].[account_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_sum_of_deposits_for_month].[@result]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_convert_to_currency]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[accounts].[currency_id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[account_operations].[amount]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[contracts].[conclusion_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_sum_of_deposits_for_month].[@year]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_sum_of_deposits_for_month].[@month]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[account_operations].[date_time]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[account_operations].[type_id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_sum_of_deposits_for_month].[@year]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_sum_of_deposits_for_month].[@month]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_sum_of_deposits_for_month].[@result]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="598" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="create procedure [dbo].[usp_sum_of_deposits_for_month]&#xD;&#xA;    @year int,&#xD;&#xA;    @month int,    &#xD;&#xA;    @result decimal(30, 2) output&#xD;&#xA;as" />
+			</Annotation>
 		</Element>
 	</Model>
 </DataSchemaModel>

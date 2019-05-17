@@ -1,0 +1,9 @@
+C:\Users\mi-pr\BankDepositsApplication\BankDepositsDB\bin\Debug\BDA.DB.BankDeposits.dacpac
+C:\Users\mi-pr\BankDepositsApplication\BankDepositsDB\bin\Debug\BankDepositsDB.dll
+C:\Users\mi-pr\BankDepositsApplication\BankDepositsDB\bin\Debug\BankDepositsDB.pdb
+C:\Users\mi-pr\BankDepositsApplication\BankDepositsDB\obj\Debug\BankDepositsDB.dll
+C:\Users\mi-pr\BankDepositsApplication\BankDepositsDB\obj\Debug\BankDepositsDB.pdb
+C:\Users\mi-pr\BankDepositsApplication\BankDepositsDB\obj\Debug\Model.xml
+C:\Users\mi-pr\BankDepositsApplication\BankDepositsDB\obj\Debug\refactor.xml
+C:\Users\mi-pr\BankDepositsApplication\BankDepositsDB\obj\Debug\postdeploy.sql
+C:\Users\mi-pr\BankDepositsApplication\BankDepositsDB\obj\Debug\predeploy.sql
