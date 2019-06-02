@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="BankDepositsDB.dll" />
-			<Metadata Name="FileName" Value="C:\USERS\MI-PR\BANKDEPOSITSAPPLICATION\BANKDEPOSITSDB\OBJ\DEBUG\BANKDEPOSITSDB.DLL" />
+			<Metadata Name="FileName" Value="F:\УЧЁБА\БД\КУРСОВОЕ ПРОЕКТИРОВАНИЕ\BANKDEPOSITSAPPLICATION\BANKDEPOSITSDB\OBJ\DEBUG\BANKDEPOSITSDB.DLL" />
 			<Metadata Name="AssemblyName" Value="BankDepositsDB" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\Users\mi-pr\BankDepositsApplication\BankDepositsDB\obj\Debug\BankDepositsDB.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BankDepositsDB\obj\Debug\BankDepositsDB.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>
@@ -1071,7 +1071,6 @@
 				<Entry>
 					<Element Type="SqlSimpleColumn" Name="[dbo].[citizenships].[citizenship_id]">
 						<Property Name="IsNullable" Value="False" />
-						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -1277,11 +1276,11 @@
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
 		</Element>
-		<Element Type="SqlTable" Name="[dbo].[currency_conversion]">
+		<Element Type="SqlTable" Name="[dbo].[currency_conversions]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[currency_conversion].[currency_id]">
+					<Element Type="SqlSimpleColumn" Name="[dbo].[currency_conversions].[currency_id]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1297,7 +1296,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[currency_conversion].[buy]">
+					<Element Type="SqlSimpleColumn" Name="[dbo].[currency_conversions].[buy]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1313,7 +1312,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[currency_conversion].[amount_in_native_currency_per_unit]">
+					<Element Type="SqlSimpleColumn" Name="[dbo].[currency_conversions].[amount_in_native_currency_per_unit]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1344,6 +1343,7 @@
 				<Entry>
 					<Element Type="SqlSimpleColumn" Name="[dbo].[deposit_terms].[deposit_term_id]">
 						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -2983,6 +2983,7 @@
 				<Entry>
 					<Element Type="SqlSimpleColumn" Name="[dbo].[phone_number_operators].[phone_number_operator_id]">
 						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -3279,7 +3280,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[currency_conversion].[currency_id]" />
+								<References Name="[dbo].[currency_conversions].[currency_id]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -3288,7 +3289,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[currency_conversion].[buy]" />
+								<References Name="[dbo].[currency_conversions].[buy]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -3297,7 +3298,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[currency_conversion].[amount_in_native_currency_per_unit]" />
+								<References Name="[dbo].[currency_conversions].[amount_in_native_currency_per_unit]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -3305,7 +3306,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[currency_conversion]" />
+					<References Name="[dbo].[currency_conversions]" />
 				</Entry>
 			</Relationship>
 			<AttachedAnnotation Disambiguator="14" />
@@ -3714,21 +3715,13 @@
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[decimal]" />
 				</Entry>
-				<Entry>
-					<References Name="[dbo].[currency_conversion]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[currency_conversion].[amount_in_native_currency_per_unit]" />
-				</Entry>
+				<Entry />
+				<Entry />
 				<Entry>
 					<References Name="[dbo].[ufn_convert_to_currency].[@convertible_amount]" />
 				</Entry>
-				<Entry>
-					<References Name="[dbo].[currency_conversion].[buy]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[currency_conversion].[currency_id]" />
-				</Entry>
+				<Entry />
+				<Entry />
 				<Entry>
 					<References Name="[dbo].[ufn_convert_to_currency].[@convertible_currency_id]" />
 				</Entry>
@@ -4314,7 +4307,7 @@ begin
         join dbo.accounts a on c.account_id = a.account_id        
         join dbo.depositors dtr on c.depositor_id = dtr.depositor_id
         join dbo.passports p on dtr.passport_id = p.passport_id
-    where ufn_get_age(p.birth_date) >= @min_age and ufn_get_age(p.birth_date) <= @max_age
+    where dbo.ufn_get_age(p.birth_date) >= @min_age and dbo.ufn_get_age(p.birth_date) <= @max_age
     order by p.last_name, p.first_name, p.middle_name;
 end]]></Value>
 			</Property>
@@ -4405,6 +4398,9 @@ end]]></Value>
 					<References Name="[dbo].[accounts].[amount]" />
 				</Entry>
 				<Entry>
+					<References Name="[dbo].[ufn_get_age]" />
+				</Entry>
+				<Entry>
 					<References Name="[dbo].[usp_deposits_with_depositors_age_in_range].[@min_age]" />
 				</Entry>
 				<Entry>
@@ -4449,7 +4445,7 @@ end]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="826" />
+				<Property Name="Length" Value="834" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="create procedure [dbo].[usp_deposits_with_depositors_age_in_range]&#xD;&#xA;    @min_age int,&#xD;&#xA;    @max_age int&#xD;&#xA;as" />

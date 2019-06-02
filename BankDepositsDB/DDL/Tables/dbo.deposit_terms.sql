@@ -1,6 +1,6 @@
 ﻿create table [dbo].[deposit_terms]
 (
-    deposit_term_id int not null,
+    deposit_term_id int not null identity(1, 1),
     days_amount int not null default 0,
     months_amount int not null default 0,
     years_amount int not null default 0,

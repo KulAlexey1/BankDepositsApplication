@@ -9,4 +9,14 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]                    
 --------------------------------------------------------------------------------------
 */
---:r .\DDL\Constraints\dbo.constraints_account_operation_types.sql
+
+:r .\DML\Inserts\dbo.insert_account_operation_types.sql
+:r .\DML\Inserts\dbo.insert_citizenships.sql
+:r .\DML\Inserts\dbo.insert_currencies.sql
+:r .\DML\Inserts\dbo.insert_currency_conversions.sql
+:r .\DML\Inserts\dbo.insert_locality_types.sql
+:r .\DML\Inserts\dbo.insert_log_types.sql
+
+:r .\DML\Triggers\dbo.tgr_insert.sql
+:r .\DML\Triggers\dbo.tgr_update.sql
+:r .\DML\Triggers\dbo.tgr_delete.sql

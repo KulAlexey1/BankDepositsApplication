@@ -65,6 +65,7 @@
     <Folder Include="DML\Inserts" />
     <Folder Include="DML\Stored Procedures" />
     <Folder Include="DML\Functions" />
+    <Folder Include="DML\Triggers" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="DDL\Tables\dbo.phone_numbers.sql" />
@@ -112,7 +113,7 @@
     <Build Include="DML\Stored Procedures\dbo.usp_most_popular_deposit_currency_for_year.sql" />
     <Build Include="DML\Stored Procedures\dbo.usp_depositors_with_non_belarus_citizenship.sql" />
     <Build Include="DML\Stored Procedures\dbo.usp_deposits_with_depositors_age_in_range.sql" />
-    <Build Include="DDL\Tables\dbo.currency_conversion.sql" />
+    <Build Include="DDL\Tables\dbo.currency_conversions.sql" />
     <Build Include="DML\Functions\dbo.ufn_convert_currency_amount_to_native_amount.sql" />
     <Build Include="DML\Functions\dbo.ufn_get_age.sql" />
     <Build Include="DML\Stored Procedures\dbo.usp_smallest_deposit_for_year.sql" />
@@ -126,6 +127,15 @@
     <Build Include="DDL\Tables\dbo.logs.sql" />
     <Build Include="DDL\Tables\dbo.log_types.sql" />
     <Build Include="DDL\Constraints\dbo.constraints_logs.sql" />
+    <None Include="DML\Triggers\dbo.tgr_delete.sql" />
+    <None Include="DML\Triggers\dbo.tgr_update.sql" />
+    <None Include="DML\Inserts\dbo.insert_log_types.sql" />
+    <None Include="DML\Inserts\dbo.insert_account_operation_types.sql" />
+    <None Include="DML\Inserts\dbo.insert_citizenships.sql" />
+    <None Include="DML\Inserts\dbo.insert_currencies.sql" />
+    <None Include="DML\Inserts\dbo.insert_currency_conversions.sql" />
+    <None Include="DML\Inserts\dbo.insert_locality_types.sql" />
+    <None Include="DML\Triggers\dbo.tgr_insert.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeployment.sql" />

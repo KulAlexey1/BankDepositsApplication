@@ -11,7 +11,7 @@ begin
         join dbo.accounts a on c.account_id = a.account_id        
         join dbo.depositors dtr on c.depositor_id = dtr.depositor_id
         join dbo.passports p on dtr.passport_id = p.passport_id
-    where ufn_get_age(p.birth_date) >= @min_age and ufn_get_age(p.birth_date) <= @max_age
+    where dbo.ufn_get_age(p.birth_date) >= @min_age and dbo.ufn_get_age(p.birth_date) <= @max_age
     order by p.last_name, p.first_name, p.middle_name;
 end
 go
