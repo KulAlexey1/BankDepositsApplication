@@ -4,6 +4,6 @@ add constraint fk_localities_locality_types
 go
 
 alter table dbo.localities
-add constraint ak_locality_type_region_locality_postcode
-    unique (locality_type_id, region, locality, postcode)
+add constraint ak_locality_type_region_locality
+    unique (locality_type_id, region, locality)
 go

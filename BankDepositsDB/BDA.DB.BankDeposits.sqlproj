@@ -136,6 +136,7 @@
     <None Include="DML\Inserts\dbo.insert_currency_conversions.sql" />
     <None Include="DML\Inserts\dbo.insert_locality_types.sql" />
     <None Include="DML\Triggers\dbo.tgr_insert.sql" />
+    <None Include="DML\Inserts\dbo.insert_employee_positions.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeployment.sql" />

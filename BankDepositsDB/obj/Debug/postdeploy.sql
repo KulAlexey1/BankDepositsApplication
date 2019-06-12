@@ -10,6 +10,12 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
+insert into dbo.employee_positions
+values (1, N'Employee'),
+       (5, N'Cashier'),
+       (10, N'Manager'),
+       (15, N'Admin')
+GO
 insert into dbo.account_operation_types
 values (1, N'Credit'),
        (5, N'Debit')

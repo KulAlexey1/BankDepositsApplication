@@ -8,7 +8,6 @@ C:\Users\mi-pr\BankDepositsApplication\BankDepositsDB\obj\Debug\refactor.xml
 C:\Users\mi-pr\BankDepositsApplication\BankDepositsDB\obj\Debug\postdeploy.sql
 C:\Users\mi-pr\BankDepositsApplication\BankDepositsDB\obj\Debug\predeploy.sql
 F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BankDepositsDB\bin\Debug\BDA.DB.BankDeposits.dacpac
-F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BankDepositsDB\obj\Debug\BDA.DB.BankDeposits.sqlprojAssemblyReference.cache
 F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BankDepositsDB\obj\Debug\BankDepositsDB.dll
 F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BankDepositsDB\obj\Debug\BankDepositsDB.pdb
 F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BankDepositsDB\bin\Debug\BankDepositsDB.dll
@@ -17,3 +16,4 @@ F:\Учёба\БД\Курсовое проектирование\BankDepositsApp
 F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BankDepositsDB\obj\Debug\refactor.xml
 F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BankDepositsDB\obj\Debug\postdeploy.sql
 F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BankDepositsDB\obj\Debug\predeploy.sql
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BankDepositsDB\obj\Debug\BDA.DB.BankDeposits.sqlprojAssemblyReference.cache

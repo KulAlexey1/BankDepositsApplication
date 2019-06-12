@@ -10,6 +10,7 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
+:r .\DML\Inserts\dbo.insert_employee_positions.sql
 :r .\DML\Inserts\dbo.insert_account_operation_types.sql
 :r .\DML\Inserts\dbo.insert_citizenships.sql
 :r .\DML\Inserts\dbo.insert_currencies.sql

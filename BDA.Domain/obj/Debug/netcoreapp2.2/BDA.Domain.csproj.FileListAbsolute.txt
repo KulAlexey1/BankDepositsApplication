@@ -1,0 +1,11 @@
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Domain\bin\Debug\netcoreapp2.2\BDA.Domain.deps.json
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Domain\bin\Debug\netcoreapp2.2\BDA.Domain.dll
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Domain\obj\Debug\netcoreapp2.2\BDA.Domain.csproj.CoreCompileInputs.cache
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Domain\obj\Debug\netcoreapp2.2\BDA.Domain.AssemblyInfoInputs.cache
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Domain\obj\Debug\netcoreapp2.2\BDA.Domain.AssemblyInfo.cs
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Domain\bin\Debug\netcoreapp2.2\BDA.Domain.pdb
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Domain\obj\Debug\netcoreapp2.2\BDA.Domain.dll
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Domain\obj\Debug\netcoreapp2.2\BDA.Domain.pdb
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Domain\bin\Debug\netcoreapp2.2\BDA.Domain.runtimeconfig.json
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Domain\bin\Debug\netcoreapp2.2\BDA.Domain.runtimeconfig.dev.json
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Domain\obj\Debug\netcoreapp2.2\BDA.Domain.csprojAssemblyReference.cache

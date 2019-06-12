@@ -4,7 +4,6 @@
     locality_type_id int not null,
     region nvarchar(255) not null,
     locality nvarchar(255) not null,
-    postcode int null,
     constraint pk_localities primary key (locality_id)
 )
 go
