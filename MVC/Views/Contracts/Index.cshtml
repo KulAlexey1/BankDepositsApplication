@@ -1,0 +1,76 @@
+﻿@using BDA.Domain;
+@model IEnumerable<BDA.Domain.Contract>
+
+@{
+    ViewData["Title"] = "Список";
+}
+
+<h1>Вклады клиентов</h1>
+
+@if (User.IsInRole(EmployeePosition.Manager.ToString()))
+{
+    <p>
+        <a asp-action="Create">Добавить</a>
+    </p>
+    <p>
+        <a asp-action="Index" asp-controller="Accounts">Счета</a>
+    </p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ConclusionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TerminationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deposit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Depositor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ConclusionDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TerminationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Account.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Deposit.DepositName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Depositor.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee.Password)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Подробнее</a>
+                    @if (User.IsInRole(EmployeePosition.Manager.ToString()))
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

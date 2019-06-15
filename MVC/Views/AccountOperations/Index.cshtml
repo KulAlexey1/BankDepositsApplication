@@ -1,0 +1,57 @@
+﻿@using BDA.Domain;
+@model IEnumerable<BDA.Domain.AccountOperation>
+
+@{
+    ViewData["Title"] = "Список";
+}
+
+<h1>Расчётные операции</h1>
+
+@if (User.IsInRole(EmployeePosition.Manager.ToString()) || User.IsInRole(EmployeePosition.Cashier.ToString()))
+{
+    <p>
+        <a asp-action="Create">Добавить</a>
+    </p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Account.Id)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Подробнее</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,12 @@
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Core\bin\Release\netcoreapp2.2\BDA.Core.deps.json
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Core\bin\Release\netcoreapp2.2\BDA.Core.dll
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Core\bin\Release\netcoreapp2.2\BDA.Core.pdb
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Core\bin\Release\netcoreapp2.2\BDA.Domain.dll
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Core\bin\Release\netcoreapp2.2\BDA.Domain.pdb
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Core\obj\Release\netcoreapp2.2\BDA.Core.csprojAssemblyReference.cache
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Core\obj\Release\netcoreapp2.2\BDA.Core.csproj.CoreCompileInputs.cache
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Core\obj\Release\netcoreapp2.2\BDA.Core.AssemblyInfoInputs.cache
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Core\obj\Release\netcoreapp2.2\BDA.Core.AssemblyInfo.cs
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Core\obj\Release\netcoreapp2.2\BDA.Core.csproj.CopyComplete
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Core\obj\Release\netcoreapp2.2\BDA.Core.dll
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Core\obj\Release\netcoreapp2.2\BDA.Core.pdb

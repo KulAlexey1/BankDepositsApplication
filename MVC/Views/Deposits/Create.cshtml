@@ -1,0 +1,57 @@
+﻿@model BDA.Domain.Deposit
+
+@{
+    ViewData["Title"] = "Добавление";
+}
+
+<h1>Добавить</h1>
+
+<h4>Вклад</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DepositName" class="control-label"></label>
+                <input asp-for="DepositName" class="form-control" />
+                <span asp-validation-for="DepositName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaymentPeriod" class="control-label"></label>
+                <input asp-for="PaymentPeriod" class="form-control" />
+                <span asp-validation-for="PaymentPeriod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepositTermId" class="control-label"></label>
+                <select asp-for="DepositTermId" class ="form-control" asp-items="(IEnumerable<SelectListItem>)ViewBag.DepositTerms"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rate" class="control-label"></label>
+                <input asp-for="Rate" class="form-control" />
+                <span asp-validation-for="Rate" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="AccountReplenishment" /> @Html.DisplayNameFor(model => model.AccountReplenishment)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Currency" class="control-label"></label>
+                <select asp-for="Currency" class="form-control" asp-items="(IEnumerable<SelectListItem>)ViewBag.Currencies"></select>
+                <span asp-validation-for="Currency" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Добавить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Вернуться к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

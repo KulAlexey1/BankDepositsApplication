@@ -1,0 +1,55 @@
+﻿@model IEnumerable<BDA.Domain.PhoneNumber>
+
+@{
+    ViewData["Title"] = "Список";
+}
+
+<h1>Телефонные номера</h1>
+
+<p>
+    <a asp-action="Create">Добавить</a>
+</p>
+<p>
+    <a asp-action="Index" asp-controller="PhoneNumberOperators">Операторы связи</a>
+</p>
+<p>
+    <a asp-action="Index" asp-controller="Depositors">Клиенты</a>
+</p>
+<p>
+    <a asp-action="Create" asp-controller="Employees">Сотрудники</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OperatorCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Operator)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OperatorCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Operator.Operator)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Изменить</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

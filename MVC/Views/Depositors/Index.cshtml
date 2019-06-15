@@ -1,0 +1,97 @@
+﻿@using BDA.Domain;
+@model IEnumerable<BDA.Domain.Depositor>
+
+@{
+    ViewData["Title"] = "Список";
+}
+
+<h1>Клиенты</h1>
+
+@if (User.IsInRole(EmployeePosition.Manager.ToString()))
+{
+    <p>
+        <a asp-action="Create">Добавить</a>
+    </p>
+    <p>
+        <a asp-action="Index" asp-controller="Addresses">Адреса</a>
+    </p>
+    <p>
+        <a asp-action="Index" asp-controller="Passports">Паспорта</a>
+    </p>
+    <p>
+        <a asp-action="Index" asp-controller="PhoneNumbers">Телефонные номера</a>
+    </p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address.Street.Locality.LocalityName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address.Street.StreetName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Passport.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber.Operator.Operator)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber.OperatorCode)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber.Number)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address.Street.Locality.LocalityName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address.Street.StreetName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Passport.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber.Operator.Operator)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber.OperatorCode)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber.Number)
+                </td>
+                <td>
+                    @if (User.IsInRole(EmployeePosition.Manager.ToString()))
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.Id">Изменить</a>
+                        <a asp-action="Details" asp-route-id="@item.Id">Подробнее</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+                    }
+                    else
+                    {
+
+                        <a asp-action="Details" asp-route-id="@item.Id">Подробнее</a>
+
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

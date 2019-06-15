@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using BDA.Core;
 using BDA.DAL.EF;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -46,8 +49,11 @@ namespace MVC
             services.AddScoped<DbContext, BankDepositsContext>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            services.AddDbContext<BankDepositsContext>(options => 
+            services
+                .AddDbContext<BankDepositsContext>(options => 
                 options.UseSqlServer(Configuration.GetConnectionString("BankDepositsDatabase")));
+
+            services.AddDefaultIdentity<ClaimsIdentity>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -56,6 +62,12 @@ namespace MVC
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/Account/SignIn";
+                    options.LogoutPath = "/Account/SignOut";
+                });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -69,17 +81,18 @@ namespace MVC
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Shared/Error");
             }
 
             app.UseStaticFiles();
-            app.UseCookiePolicy();
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Depositors}/{action=Index}/{id?}");
             });
         }
     }

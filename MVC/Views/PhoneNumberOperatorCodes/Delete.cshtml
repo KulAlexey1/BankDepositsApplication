@@ -1,0 +1,35 @@
+﻿@model BDA.Domain.PhoneNumberOperatorCode
+
+@{
+    ViewData["Title"] = "Удаление";
+}
+
+<h1>Удаление</h1>
+
+<h3>Вы уверены, что хотите удалить это?</h3>
+<div>
+    <h4>PhoneNumberOperatorCode</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.PhoneNumberOperator)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.PhoneNumberOperator.Operator)
+        </dd>
+
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="PhoneNumberOperatorId" />
+        <input type="hidden" asp-for="Code" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-action="Index">Вернуться к списку</a>
+    </form>
+</div>

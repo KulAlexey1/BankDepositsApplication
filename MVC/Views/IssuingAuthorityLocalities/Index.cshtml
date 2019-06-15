@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BDA.Domain.IssuingAuthorityLocality>
+
+@{
+    ViewData["Title"] = "Список";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Добавить</a>
+</p>
+<p>
+    <a asp-action="Index" asp-controller="IssuingAuthorities">Выдающие органы</a>
+</p>
+<p>
+    <a asp-action="Index" asp-controller="Localities">Населённые пункты</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IssuingAuthority)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Locality)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssuingAuthority.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Locality.LocalityName)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { issuingAuthorityId = item.IssuingAuthorityId, localityId = item.LocalityId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,208 @@
+﻿@model BDA.Domain.Employee
+
+@{
+    ViewData["Title"] = "Регистрация";
+}
+
+<h1>Регистрация</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*passport*@
+            <div class="form-group">
+                <label asp-for="Passport.FirstName" class="control-label"></label>
+                <input asp-for="Passport.FirstName" class="form-control" />
+                <span asp-validation-for="Passport.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Passport.MiddleName" class="control-label"></label>
+                <input asp-for="Passport.MiddleName" class="form-control" />
+                <span asp-validation-for="Passport.MiddleName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Passport.LastName" class="control-label"></label>
+                <input asp-for="Passport.LastName" class="form-control" />
+                <span asp-validation-for="Passport.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Passport.BirthDate" class="control-label"></label>
+                <input asp-for="Passport.BirthDate" class="form-control" />
+                <span asp-validation-for="Passport.BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Passport.Gender" />
+                    @Html.DisplayNameFor(model => model.Passport.Gender)
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Passport.Number" class="control-label"></label>
+                <input asp-for="Passport.Number" class="form-control" />
+                <span asp-validation-for="Passport.Number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Passport.IdentificationNumber" class="control-label"></label>
+                <input asp-for="Passport.IdentificationNumber" class="form-control" />
+                <span asp-validation-for="Passport.IdentificationNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Passport.IssuingAuthorityLocalityId" class="control-label"></label>
+                <select asp-for="Passport.IssuingAuthorityLocalityId" class="form-control" asp-items="(IEnumerable<SelectListItem>)ViewBag.Localities"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Passport.IssuingAuthorityId" class="control-label"></label>
+                <select asp-for="Passport.IssuingAuthorityId" class="form-control" asp-items="(IEnumerable<SelectListItem>)ViewBag.IssuingAuthorities"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Passport.IssueDate" class="control-label"></label>
+                <input asp-for="Passport.IssueDate" class="form-control" />
+                <span asp-validation-for="Passport.IssueDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Passport.ExpirationDate" class="control-label"></label>
+                <input asp-for="Passport.ExpirationDate" class="form-control" />
+                <span asp-validation-for="Passport.ExpirationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Passport.CitizenshipId" class="control-label"></label>
+                <select asp-for="Passport.CitizenshipId" class="form-control" asp-items="(IEnumerable<SelectListItem>)ViewBag.Citizenships"></select>
+                <span asp-validation-for="Passport.CitizenshipId" class="text-danger"></span>
+            </div>
+
+            @*address*@
+            <div class="form-group">
+                <label asp-for="Address.StreetId" class="control-label"></label>
+                <select asp-for="Address.StreetId" class="form-control" asp-items="(IEnumerable<SelectListItem>)ViewBag.Streets"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.House" class="control-label"></label>
+                <input asp-for="Address.House" class="form-control" />
+                <span asp-validation-for="Address.House" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.Housing" class="control-label"></label>
+                <input asp-for="Address.Housing" class="form-control" />
+                <span asp-validation-for="Address.Housing" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.Apartment" class="control-label"></label>
+                <input asp-for="Address.Apartment" class="form-control" />
+                <span asp-validation-for="Address.Apartment" class="text-danger"></span>
+            </div>
+
+            @*phone number*@
+            <div class="form-group">
+                <label asp-for="PhoneNumber.OperatorId" class="control-label"></label>
+                <select asp-for="PhoneNumber.OperatorId" class="form-control" asp-items="ViewBag.PhoneNumberOperators"></select>
+                <span asp-validation-for="PhoneNumber.OperatorId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PhoneNumber.OperatorCode" class="control-label"></label>
+                <select asp-for="PhoneNumber.OperatorCode" class="form-control" asp-items="(IEnumerable<SelectListItem>)ViewBag.PhoneNumberOperatorCodes"></select>
+                <span asp-validation-for="PhoneNumber.OperatorCode" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PhoneNumber.Number" class="control-label"></label>
+                <input asp-for="PhoneNumber.Number" class="form-control" />
+                <span asp-validation-for="PhoneNumber.Number" class="text-danger"></span>
+            </div>
+
+            @*other*@
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"></label>
+                <input asp-for="EndDate" class="form-control" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Зарегистрироваться" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).on("change", "#Passport_IssuingAuthorityLocalityId", function () {
+            var localityId = this;
+            $.ajax({
+                url: "/IssuingAuthorityLocalities/GetIssuingAuthoritesBy?localityId=" + $(localityId).val(),
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                datatype: JSON,
+                success: function (result) {                    
+                    var issuingAuthorities = "";
+                    $(result).each(function () {
+                        issuingAuthorities = issuingAuthorities + '<option value="' + this.id + '">' + this.name + '</option>'
+                    });
+
+                    var subCateList = $("#Passport_IssuingAuthorityId");
+                    subCateList.empty();
+                    subCateList.append(issuingAuthorities);
+                }
+            });
+
+           
+            $.ajax({
+                url: "/Streets/GetStreetsBy?localityId=" + $(localityId).val(),
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                datatype: JSON,
+                success: function (result) {
+                    var streets = "";
+                    $(result).each(function () {
+                        streets = streets + '<option value="' + this.id + '">' + this.streetName + '</option>'
+                    });
+
+                    var streetList = $("#Address_StreetId");
+                    streetList.empty();
+                    streetList.append(streets);
+                }
+            });
+        });
+
+        $(document).on("change", "#PhoneNumber_OperatorId", function () {
+            var subCat1 = this;
+            $.ajax({
+                url: "/PhoneNumberOperatorCodes/GetPhoneNumberOperatorCodesBy?phoneNumberOperatorId=" + $(subCat1).val(),
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                datatype: JSON,
+                success: function (result) {
+                    var codes = "";
+                    $(result).each(function () {
+                        codes = codes + '<option value="' + this + '">' + this + '</option>'
+                    });
+
+                    var subCateList = $("#PhoneNumber_OperatorCode");
+                    subCateList.empty();
+                    subCateList.append(codes);
+                }
+            });
+        });
+    });
+</script>
+    }

@@ -1,3 +1,24 @@
-﻿@{
-    Layout = "_Layout";
+﻿@using BDA.Domain;
+
+@{
+    if (User.IsInRole(EmployeePosition.Employee.ToString()))
+    {
+        Layout = "_EmployeeLayout";
+    }
+    else if (User.IsInRole(EmployeePosition.Cashier.ToString()))
+    {
+        Layout = "_CashierLayout";
+    }
+    else if (User.IsInRole(EmployeePosition.Manager.ToString()))
+    {
+        Layout = "_ManagerLayout";
+    }
+    else if (User.IsInRole(EmployeePosition.Admin.ToString()))
+    {
+        Layout = "_AdminLayout";
+    }
+    else
+    {
+        Layout = "_Layout";
+    }
 }

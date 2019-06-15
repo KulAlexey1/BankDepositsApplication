@@ -75,7 +75,7 @@ namespace BDA.DAL.EF
                     .HasColumnName("date_time")
                     .HasColumnType("datetime");
 
-                entity.Property(e => e.Id).HasColumnName("type_id");
+                entity.Property(e => e.Type).HasColumnName("type_id");
 
                 entity.HasOne(d => d.Account)
                     .WithMany(p => p.AccountOperations)
@@ -450,7 +450,7 @@ namespace BDA.DAL.EF
                     .HasColumnName("number")
                     .HasMaxLength(20);
                 
-                entity.HasOne(d => d.IssuingAuthority)
+                entity.HasOne(d => d.IssuingAuthorityLocality)
                     .WithMany(p => p.Passports)
                     .HasForeignKey(d => new { d.IssuingAuthorityId, d.IssuingAuthorityLocalityId })
                     .OnDelete(DeleteBehavior.ClientSetNull)

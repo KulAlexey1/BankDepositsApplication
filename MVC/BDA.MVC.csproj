@@ -7,6 +7,7 @@
 
 
   <ItemGroup>
+    <PackageReference Include="jQuery" Version="3.4.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.4" />
@@ -15,6 +16,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.2.6" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
   </ItemGroup>
 
@@ -22,6 +24,8 @@
   <ItemGroup>
     <ProjectReference Include="..\BDA.Core\BDA.Core.csproj" />
     <ProjectReference Include="..\BDA.DAL.EF\BDA.DAL.EF.csproj" />
+    <ProjectReference Include="..\BDA.Domain\BDA.Domain.csproj" />
+    <ProjectReference Include="..\BDA.Shared\BDA.Shared.csproj" />
   </ItemGroup>
 
 </Project>

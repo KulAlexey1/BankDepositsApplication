@@ -1,0 +1,91 @@
+﻿@using BDA.Domain;
+@model IEnumerable<BDA.Domain.Deposit>
+
+@{
+    ViewData["Title"] = "Список";
+}
+
+<h1>Вклады</h1>
+
+@if (User.IsInRole(EmployeePosition.Admin.ToString()))
+{
+    <p>
+        <a asp-action="Create">Добавить</a>
+    </p>
+    <p>
+        <a asp-action="Index" asp-controller="DepositTerms">Сроки вкладов</a>
+    </p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DepositName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentPeriod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountReplenishment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrencyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepositTerm.DaysAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepositTerm.MonthsAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepositTerm.YearsAmount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepositName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentPeriod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountReplenishment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Currency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepositTerm.DaysAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepositTerm.MonthsAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepositTerm.YearsAmount)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Подробнее</a>
+                @if (User.IsInRole(EmployeePosition.Admin.ToString()))
+                {
+                    <p>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+                    </p>
+                }
+
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

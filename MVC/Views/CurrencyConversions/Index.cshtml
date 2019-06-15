@@ -1,0 +1,47 @@
+﻿@model IEnumerable<BDA.Domain.CurrencyConversion>
+
+@{
+    ViewData["Title"] = "Список";
+}
+
+<h1>Конвертация валют</h1>
+
+<p>
+    <a asp-action="Create">Добавить</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.CurrencyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Buy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AmountInNativeCurrencyPerUnit)
+            </th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrencyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Buy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountInNativeCurrencyPerUnit)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-controller="CurrencyConversions" asp-route-currency="@item.Currency" asp-route-buy="@item.Buy" asp-route-amout="@item.AmountInNativeCurrencyPerUnit">Изменить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

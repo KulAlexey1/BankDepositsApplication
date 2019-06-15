@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BDA.Domain
 {
@@ -11,6 +12,7 @@ namespace BDA.Domain
             PhoneNumbers = new HashSet<PhoneNumber>();
         }
 
+        [Display(Name = "Оператор")]
         public string Operator { get; set; }
 
         public ICollection<PhoneNumberOperatorCode> PhoneNumberOperatorsCodes { get; set; }

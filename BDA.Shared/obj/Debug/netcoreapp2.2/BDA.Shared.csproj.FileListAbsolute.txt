@@ -1,0 +1,12 @@
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Shared\bin\Debug\netcoreapp2.2\BDA.Shared.deps.json
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Shared\bin\Debug\netcoreapp2.2\BDA.Shared.dll
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Shared\bin\Debug\netcoreapp2.2\BDA.Shared.pdb
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Shared\bin\Debug\netcoreapp2.2\BDA.Domain.dll
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Shared\bin\Debug\netcoreapp2.2\BDA.Domain.pdb
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Shared\obj\Debug\netcoreapp2.2\BDA.Shared.csprojAssemblyReference.cache
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Shared\obj\Debug\netcoreapp2.2\BDA.Shared.csproj.CoreCompileInputs.cache
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Shared\obj\Debug\netcoreapp2.2\BDA.Shared.AssemblyInfoInputs.cache
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Shared\obj\Debug\netcoreapp2.2\BDA.Shared.AssemblyInfo.cs
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Shared\obj\Debug\netcoreapp2.2\BDA.Shared.csproj.CopyComplete
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Shared\obj\Debug\netcoreapp2.2\BDA.Shared.dll
+F:\Учёба\БД\Курсовое проектирование\BankDepositsApplication\BDA.Shared\obj\Debug\netcoreapp2.2\BDA.Shared.pdb

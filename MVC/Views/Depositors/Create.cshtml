@@ -1,0 +1,45 @@
+﻿@model BDA.Domain.Depositor
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Добавить</h1>
+
+<h4>Клиент</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PassportId" class="control-label"></label>
+                <select asp-for="PassportId" class ="form-control" asp-items="(IEnumerable<SelectListItem>)ViewBag.Passports"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddressId" class="control-label"></label>
+                <select asp-for="AddressId" class ="form-control" asp-items="(IEnumerable<SelectListItem>)ViewBag.Addresses"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumberId" class="control-label"></label>
+                <select asp-for="PhoneNumberId" class ="form-control" asp-items="(IEnumerable<SelectListItem>)ViewBag.PhoneNumbers"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Добавить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Вернуться к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

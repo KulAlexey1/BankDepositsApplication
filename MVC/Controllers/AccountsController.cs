@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BDA.DAL.EF;
 using BDA.Domain;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BDA.MVC.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class AccountsController : ControllerBase
+    [Authorize]
+    public class AccountsController : Controller
     {
         private readonly BankDepositsContext _context;
 
@@ -21,81 +21,134 @@ namespace BDA.MVC.Controllers
             _context = context;
         }
 
-        // GET: api/Accounts
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Account>>> GetAccounts()
+        // GET: Accounts
+        public async Task<IActionResult> Index()
         {
-            return await _context.Accounts.ToListAsync();
+            return View(await _context.Accounts.ToListAsync());
         }
 
-        // GET: api/Accounts/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Account>> GetAccount(int id)
+        // GET: Accounts/Details/5
+        public async Task<IActionResult> Details(int? id)
         {
-            var account = await _context.Accounts.FindAsync(id);
+            if (id == null)
+            {
+                return NotFound();
+            }
 
+            var account = await _context.Accounts
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (account == null)
             {
                 return NotFound();
             }
 
-            return account;
+            return View(account);
         }
 
-        // PUT: api/Accounts/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutAccount(int id, Account account)
+        // GET: Accounts/Create
+        public IActionResult Create()
+        {
+            ViewBag.Currencies = CurrencyConsts.Dict.Select(s => new SelectListItem(s.Value, s.Key.ToString()));
+            return View();
+        }
+
+        // POST: Accounts/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("OpeningDate,ClosingDate,Amount,Currency,Id")] Account account)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(account);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            ViewBag.Currencies = CurrencyConsts.Dict.Select(s => new SelectListItem(s.Value, s.Key.ToString()));
+            return View(account);
+        }
+
+        // GET: Accounts/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var account = await _context.Accounts.FindAsync(id);
+            if (account == null)
+            {
+                return NotFound();
+            }
+            ViewBag.Currencies = CurrencyConsts.Dict.Select(s => new SelectListItem(s.Value, s.Key.ToString()));
+            return View(account);
+        }
+
+        // POST: Accounts/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("OpeningDate,ClosingDate,Amount,Currency,Id")] Account account)
         {
             if (id != account.Id)
             {
-                return BadRequest();
+                return NotFound();
             }
 
-            _context.Entry(account).State = EntityState.Modified;
-
-            try
+            if (ModelState.IsValid)
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!AccountExists(id))
+                try
                 {
-                    return NotFound();
+                    _context.Update(account);
+                    await _context.SaveChangesAsync();
                 }
-                else
+                catch (DbUpdateConcurrencyException)
                 {
-                    throw;
+                    if (!AccountExists(account.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
                 }
+                return RedirectToAction(nameof(Index));
             }
-
-            return NoContent();
+            ViewBag.Currencies = CurrencyConsts.Dict.Select(s => new SelectListItem(s.Value, s.Key.ToString()));
+            return View(account);
         }
 
-        // POST: api/Accounts
-        [HttpPost]
-        public async Task<ActionResult<Account>> PostAccount(Account account)
+        // GET: Accounts/Delete/5
+        public async Task<IActionResult> Delete(int? id)
         {
-            _context.Accounts.Add(account);
-            await _context.SaveChangesAsync();
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-            return CreatedAtAction("GetAccount", new { id = account.Id }, account);
-        }
-
-        // DELETE: api/Accounts/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Account>> DeleteAccount(int id)
-        {
-            var account = await _context.Accounts.FindAsync(id);
+            var account = await _context.Accounts
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (account == null)
             {
                 return NotFound();
             }
 
+            return View(account);
+        }
+
+        // POST: Accounts/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var account = await _context.Accounts.FindAsync(id);
             _context.Accounts.Remove(account);
             await _context.SaveChangesAsync();
-
-            return account;
+            return RedirectToAction(nameof(Index));
         }
 
         private bool AccountExists(int id)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BDA.Domain
 {
@@ -11,9 +12,13 @@ namespace BDA.Domain
             Employees = new HashSet<Employee>();
         }
 
+        [Display(Name = "И/Н улицы")]
         public int StreetId { get; set; }
+        [Display(Name = "Дом")]
         public int House { get; set; }
+        [Display(Name = "Корпус")]
         public string Housing { get; set; }
+        [Display(Name = "Квартира")]
         public int Apartment { get; set; }
 
         public Street Street { get; set; }

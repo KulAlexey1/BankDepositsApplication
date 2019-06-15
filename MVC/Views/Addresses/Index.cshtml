@@ -1,0 +1,67 @@
+﻿@using BDA.Domain;
+@model IEnumerable<BDA.Domain.Address>
+
+@{
+    ViewData["Title"] = "Список";
+}
+
+<h1>Адреса</h1>
+
+<p>
+    <a asp-action="Create">Добавить</a>
+</p>
+@if (User.IsInRole(EmployeePosition.Admin.ToString()))
+{
+<p>
+    <a asp-action="Index" asp-controller="Streets">Улицы</a>
+</p>
+}
+<p>
+    <a asp-action="Index" asp-controller="Depositors">Клиенты</a>
+</p>
+<p>
+    <a asp-action="Create" asp-controller="Employees">Сотрудники</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.House)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Housing)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apartment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Street)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.House)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Housing)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apartment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Street.StreetName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Изменить</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Подробнее</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
